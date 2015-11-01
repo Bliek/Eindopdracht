@@ -1,5 +1,6 @@
 package com.coprene.eindopdracht;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -62,18 +63,18 @@ public class ListActivity extends AppCompatActivity {
 
         //Set the listview on item click listener
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View listItem, int position, long id) {
-                //Get the value of the item that the user clicked on
-                String clickedItem = (String) parent.getItemAtPosition(position);
+                //Create an Intent
+                Intent intent = new Intent(ListActivity.this, DetailActivity.class);
 
-                //Display a Toast message to show the user the item he/she clicked on
-                Toast.makeText(ListActivity.this, "Clicked: " + clickedItem, Toast.LENGTH_LONG).show();
+                //Open the new screen by starting the activity
+                startActivity(intent);
             }
         });
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -133,7 +134,6 @@ public class ListActivity extends AppCompatActivity {
         }
         return super.onContextItemSelected(item);
     }
-
     public void addListItem(View view) {
         //Get the user text from the textfield
         String text = addItemEditText.getText().toString();
