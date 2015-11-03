@@ -25,7 +25,6 @@ public class DetailActivity extends AppCompatActivity {
         description = (TextView) findViewById(R.id.activity_details_description);
 
         //Set up the actionbar back arrow button
-        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Get the values from the intent
